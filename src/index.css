@@ -1,0 +1,222 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 142 76% 36%;
+    --primary-foreground: 355 7% 97%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --warning: 43 96% 56%;
+    --warning-foreground: 25 5% 45%;
+
+    --success: 142 69% 58%;
+    --success-foreground: 355 7% 97%;
+
+    --info: 217 91% 60%;
+    --info-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+
+    /* Notification specific colors */
+    --notification-unread: 142 76% 96%;
+    --notification-unread-border: 142 76% 85%;
+    --notification-read: 210 40% 98%;
+    --notification-indicator: 142 76% 36%;
+    --notification-urgent: 0 84% 60%;
+    --notification-urgent-foreground: 0 0% 100%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Weather specific gradients and colors */
+    --weather-sunny: 43 96% 65%;
+    --weather-sunny-secondary: 35 100% 75%;
+    --weather-cloudy: 210 14% 53%;
+    --weather-cloudy-secondary: 210 14% 83%;
+    --weather-rainy: 210 100% 56%;
+    --weather-rainy-secondary: 210 100% 76%;
+    --weather-stormy: 267 84% 50%;
+    --weather-stormy-secondary: 267 84% 70%;
+    --weather-clear: 195 100% 50%;
+    --weather-clear-secondary: 195 100% 70%;
+    
+    /* Climate green colors */
+    --climate-green: 142 76% 40%;
+    --climate-green-light: 142 76% 50%;
+    --climate-green-dark: 142 76% 30%;
+    
+    /* Weather gradients */
+    --gradient-sunny: linear-gradient(135deg, hsl(var(--weather-sunny)), hsl(var(--weather-sunny-secondary)));
+    --gradient-cloudy: linear-gradient(135deg, hsl(var(--weather-cloudy)), hsl(var(--weather-cloudy-secondary)));
+    --gradient-rainy: linear-gradient(135deg, hsl(var(--weather-rainy)), hsl(var(--weather-rainy-secondary)));
+    --gradient-stormy: linear-gradient(135deg, hsl(var(--weather-stormy)), hsl(var(--weather-stormy-secondary)));
+    --gradient-clear: linear-gradient(135deg, hsl(var(--weather-clear)), hsl(var(--weather-clear-secondary)));
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 142 76% 36%;
+    --primary-foreground: 355 7% 97%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    --success: 142 69% 45%;
+    --success-foreground: 355 7% 97%;
+
+    --info: 217 91% 45%;
+    --info-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+
+    /* Weather colors for dark mode */
+    --weather-sunny: 48 96% 70%;
+    --weather-sunny-secondary: 40 100% 80%;
+    --weather-cloudy: 210 14% 60%;
+    --weather-cloudy-secondary: 210 14% 80%;
+    --weather-rainy: 210 100% 65%;
+    --weather-rainy-secondary: 210 100% 80%;
+    --weather-stormy: 267 84% 60%;
+    --weather-stormy-secondary: 267 84% 75%;
+    --weather-clear: 195 100% 60%;
+    --weather-clear-secondary: 195 100% 75%;
+    
+    /* Climate green colors for dark mode */
+    --climate-green: 142 76% 45%;
+    --climate-green-light: 142 76% 55%;
+    --climate-green-dark: 142 76% 35%;
+
+    /* Notification colors for dark mode */
+    --notification-unread: 142 76% 15%;
+    --notification-unread-border: 142 76% 25%;
+    --notification-read: 217.2 32.6% 15%;
+    --notification-indicator: 142 76% 50%;
+    --notification-urgent: 0 84% 45%;
+    --notification-urgent-foreground: 0 0% 100%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  input, 
+  select, 
+  textarea {
+    @apply bg-background border-border text-foreground;
+  }
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* Utility classes for better mobile experience */
+.line-clamp-1 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+.line-clamp-2 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.line-clamp-3 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+/* Touch-friendly interaction classes */
+.touch-manipulation {
+  touch-action: manipulation;
+}
+
+/* Safe area support for mobile devices */
+.safe-area-inset-bottom {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* Hide scrollbar for horizontal scrolling */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
