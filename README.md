@@ -10,63 +10,64 @@ Eco-Smart is a comprehensive full-stack application dedicated to environmental m
 - **Community Reports**: Feed and detail views for environmental reports from the community.
 - **Admin & AI Dashboards**: Monitoring tools for administrators and AI-driven insights.
 - **Help Center & Tips**: Access to environmental tips and a comprehensive help system.
-- **Secure Authentication**: Integrated Supabase authentication for users and admins.
+- **Mobile Support**: Capacitor integration for Android and iOS.
+- **Data Portability**: Users can export their data and manage their privacy settings locally.
 
-## 🛠 Tech Stack
+## 🏗 Architecture & Technical Design
 
-- **Frontend**: Vite, React, TypeScript
-- **Styling**: Tailwind CSS, shadcn/ui, Framer Motion
-- **Backend/Database**: Supabase (PostgreSQL)
-- **Maps**: Google Maps API Integration
-- **Mobile Support**: Capacitor (Android/iOS support)
+### Frontend
+- **React + Vite**: Fast, modern development environment.
+- **TypeScript**: Type-safe development for enterprise scalability.
+- **Tailwind CSS + shadcn/ui**: Premium UI components with a consistent design system.
+- **Framer Motion**: Smooth micro-animations and transitions.
+- **TanStack Query**: Efficient data fetching, caching, and state management.
 
-## 📋 Prerequisites
+### Backend & Infrastructure
+- **Supabase (PostgreSQL)**: Scalable relational database with real-time capabilities.
+- **Authentication**: Secure RBAC (Role-Based Access Control) via Supabase Auth.
+- **Storage**: Media handling for campaign and report images.
+- **Edge Functions**: (Optional) For background processing and server-side logic.
 
-- **Node.js**: v18 or higher
-- **npm**: v9 or higher
-- **Supabase Account**: Required for database and auth.
-- **Google Maps API Key**: Required for map features.
+### External Integrations
+- **Google Maps API**: Geographic visualization and location tracking.
+- **OpenWeatherMap API**: Real-time weather data and disaster alerts.
+- **Capacitor**: Native bridge for mobile platform independence.
 
-## ⚙️ Setup Instructions
+## ⚙️ Development Setup
 
-1. **Clone the repository**:
-   ```sh
-   git clone <repository-url>
-   cd eco-smart
-   ```
+### Prerequisites
+- **Node.js**: v18.0.0+
+- **npm**: v9.0.0+
+- **Supabase CLI**: For local development (recommended)
 
-2. **Install dependencies**:
-   ```sh
-   npm install
-   ```
+### Installation
+1.  **Clone the repository**:
+    ```sh
+    git clone <repository-url>
+    cd eco-smart
+    ```
+2.  **Install dependencies**:
+    ```sh
+    npm install
+    ```
+3.  **Environment Configuration**:
+    Create a `.env` file from `.env.example`:
+    ```env
+    VITE_SUPABASE_URL=your_supabase_url
+    VITE_SUPABASE_PUBLISHABLE_KEY=your_publishable_key
+    VITE_GOOGLE_MAPS_API_KEY=your_google_maps_key
+    VITE_OPENWEATHERMAP_API_KEY=your_weather_key
+    ```
 
-3. **Configure Environment Variables**:
-   Copy `.env.example` to `.env` and fill in your keys:
-   ```sh
-   cp .env.example .env
-   ```
-   Required variables:
-   - `VITE_SUPABASE_URL`
-   - `VITE_SUPABASE_PUBLISHABLE_KEY`
-   - `VITE_GOOGLE_MAPS_API_KEY`
-
-4. **Start Development Server**:
-   ```sh
-   npm run dev
-   ```
-
-## 🏗 Build & Deploy
-
-To create a production build:
+### Running Locally
 ```sh
-npm run build
+npm run dev
 ```
 
-To preview the build locally:
-```sh
-npm run preview
-```
+## 🧪 Testing & Quality Assurance
+The project uses **Vitest** for unit and integration testing.
+- Run all tests: `npm test`
+- watch mode: `npm run test:watch`
 
 ## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+Copyright (c) 2026 Eco-Smart Contributors. Licensed under the [MIT License](LICENSE).

@@ -35,12 +35,15 @@ const PrivacyPolicy: React.FC = () => {
               <p>4.1 We implement industry-standard security measures to protect your data from unauthorized access, disclosure, or destruction.</p>
               <p>4.2 While we strive to protect your data, no method of transmission over the internet or electronic storage is 100% secure.</p>
               
-              <h2 className="text-xl font-semibold mt-6 mb-3">5. User Rights</h2>
-              <p>5.1 You have the right to access, update, or delete your personal information by contacting us at info@eco-smartapp.com.</p>
-              <p>5.2 You may opt out of receiving notifications or communications by adjusting your account settings.</p>
+              <h2 className="text-xl font-semibold mt-6 mb-3">5. User Rights & Data Control</h2>
+              <p>5.1 **Right of Access & Portability**: You have the right to access the personal data we hold about you. You can export your data in a machine-readable format (JSON) at any time through the "Settings" menu in the App.</p>
+              <p>5.2 **Right to Rectification**: You can update your profile information directly within the App's account settings.</p>
+              <p>5.3 **Right to Erasure (Right to be Forgotten)**: You have the right to request the permanent deletion of your account and all associated data. This can be performed via the "Delete Account" feature in Settings or by contacting us.</p>
+              <p>5.4 **Right to Withdraw Consent**: You may opt out of receiving notifications or marketing communications by adjusting your account settings or using the unsubscribe link in emails.</p>
               
-              <h2 className="text-xl font-semibold mt-6 mb-3">6. Retention of Data</h2>
-              <p>6.1 We retain your information only for as long as necessary to fulfill the purposes outlined in this Privacy Policy or as required by law.</p>
+              <h2 className="text-xl font-semibold mt-6 mb-3">6. Data Retention & Third Parties</h2>
+              <p>6.1 **Retention Period**: We retain your personal information for as long as your account is active. If you delete your account, your personal data will be removed from our active databases within 30 days, except where retention is required for legal, auditing, or compliance purposes.</p>
+              <p>6.2 **Third-Party Services**: We use Supabase for database management and authentication, Google Maps for geographic features, and OpenWeatherMap for climate alerts. These partners adhere to strict privacy standards and only process data according to our instructions.</p>
               
               <h2 className="text-xl font-semibold mt-6 mb-3">7. Changes to the Privacy Policy</h2>
               <p>7.1 We may update this Privacy Policy periodically. Continued use of the App after changes constitutes acceptance of the revised Privacy Policy.</p>

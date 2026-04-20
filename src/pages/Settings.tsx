@@ -37,9 +37,13 @@ import {
   getMobileInstructions,
   type NotificationPreferences 
 } from '@/services/pushNotificationService';
+import { exportUserData } from '@/services/dataExportService';
+import { useAuthActions } from '@/hooks/useAuthActions';
+import { Download, Trash2, Key } from 'lucide-react';
 
 const Settings: React.FC = () => {
   const { user, profile } = useAuth();
+  const { deleteAccount } = useAuthActions();
   const { toast } = useToast();
   const [notificationPreferences, setNotificationPreferences] = useState<NotificationPreferences | null>(null);
   const [loading, setLoading] = useState(false);
@@ -307,6 +311,50 @@ const Settings: React.FC = () => {
       description: "Check if you received the disaster alert"
     });
   };
+
+  const handleExportData = async () => {
+    if (!user?.id) return;
+    setLoading(true);
+    try {
+      await exportUserData(user.id);
+      toast({
+        title: "Export Successful",
+        description: "Your data has been packaged and downloaded."
+      });
+    } catch (error) {
+      toast({
+        title: "Export Failed",
+        description: "Could not export your data. Please try again later.",
+        variant: "destructive"
+      });
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleDeleteAccount = async () => {
+    if (!window.confirm("Are you absolutely sure? This action cannot be undone and all your data will be permanently deleted.")) {
+      return;
+    }
+    
+    setLoading(true);
+    try {
+      await deleteAccount();
+      toast({
+        title: "Account Deleted",
+        description: "Your account and data have been removed. Redirecting..."
+      });
+      // The deleteAccount action in authService handles logout and cleanup
+    } catch (error) {
+      toast({
+        title: "Deletion Failed",
+        description: "An error occurred while deleting your account. Please contact support.",
+        variant: "destructive"
+      });
+    } finally {
+      setLoading(false);
+    }
+  };
   
   return (
     <div className="min-h-screen bg-background pb-16">
@@ -544,14 +592,46 @@ const Settings: React.FC = () => {
                   </div>
                   <Switch id="profile-visibility" defaultChecked />
                 </div>
-                <div className="pt-4">
-                  <Button variant="outline" className="w-full text-destructive border-destructive hover:bg-destructive/10">
+                <div className="pt-4 space-y-3">
+                  <Button 
+                    variant="outline" 
+                    className="w-full flex items-center justify-center"
+                    onClick={() => toast({ title: "Coming Soon", description: "Password reset flow is being automated." })}
+                  >
+                    <Key className="h-4 w-4 mr-2" />
                     Reset Password
                   </Button>
+                  
+                  <Button 
+                    variant="outline" 
+                    className="w-full flex items-center justify-center border-primary/20 hover:bg-primary/5"
+                    onClick={handleExportData}
+                    disabled={loading}
+                  >
+                    <Download className="h-4 w-4 mr-2" />
+                    {loading ? 'Exporting...' : 'Export My Data (JSON)'}
+                  </Button>
+                  
+                  <div className="pt-4 border-t border-destructive/10">
+                    <Button 
+                      variant="destructive" 
+                      className="w-full flex items-center justify-center"
+                      onClick={handleDeleteAccount}
+                      disabled={loading}
+                    >
+                      <Trash2 className="h-4 w-4 mr-2" />
+                      Delete My Account
+                    </Button>
+                    <p className="text-[10px] text-muted-foreground mt-2 text-center">
+                      Deleting your account will remove all your campaigns, reports, and listings.
+                    </p>
+                  </div>
                 </div>
               </CardContent>
               <CardFooter>
-                <Button onClick={handleSaveSettings}>Save Changes</Button>
+                <Button onClick={handleSaveSettings} disabled={loading}>
+                  {loading ? 'Processing...' : 'Save Privacy Settings'}
+                </Button>
               </CardFooter>
             </Card>
           </TabsContent>
