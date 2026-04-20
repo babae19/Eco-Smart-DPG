@@ -12,6 +12,7 @@ Eco-Smart is a comprehensive full-stack application dedicated to environmental m
 - **Help Center & Tips**: Access to environmental tips and a comprehensive help system.
 - **Mobile Support**: Capacitor integration for Android and iOS.
 - **Data Portability**: Users can export their data and manage their privacy settings locally.
+- **Privacy Compliance**: Built-in consent management and right-to-erasure tools.
 
 ## 🏗 Architecture & Technical Design
 
@@ -63,6 +64,16 @@ Eco-Smart is a comprehensive full-stack application dedicated to environmental m
 ```sh
 npm run dev
 ```
+
+## 🚀 Deployment & Production
+
+For detailed instructions on production deployment, database migrations, and self-hosting, please refer to the **[DEPLOYMENT.md](DEPLOYMENT.md)** guide.
+
+## 🤝 Maintainers & Contact
+
+Eco-Smart is maintained by the Core Team. For inquiries, support, or security reports, please contact:
+- **Primary**: [ecosmart232@gmail.com](mailto:ecosmart232@gmail.com)
+- **Secondary**: [barrie19@hotmail.com](mailto:barrie19@hotmail.com)
 
 ## 🧪 Testing & Quality Assurance
 The project uses **Vitest** for unit and integration testing.

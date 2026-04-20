@@ -8,6 +8,7 @@ import { LocationProvider } from '@/contexts/LocationContext';
 import { WeatherProvider } from '@/contexts/WeatherContext';
 import ProtectedRoute from '@/components/ProtectedRoute';
 import ErrorBoundary from '@/components/ErrorBoundary';
+import ConsentBanner from '@/components/ConsentBanner';
 import { aiDebuggingInitializer } from '@/services/aiDebug/initializeAIDebugging';
 const NotFound = lazy(() => import('@/pages/NotFound'));
 
@@ -201,6 +202,7 @@ function App() {
             </Routes>
           </Suspense>
           <Toaster />
+          <ConsentBanner />
           </RealtimeDateTimeProvider>
           </WeatherProvider>
         </LocationProvider>

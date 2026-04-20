@@ -49,6 +49,22 @@ const Settings: React.FC = () => {
   const [loading, setLoading] = useState(false);
   const [permissionStatus, setPermissionStatus] = useState<NotificationPermission>('default');
   const [isMobile, setIsMobile] = useState(false);
+  const [dataSharing, setDataSharing] = useState(false);
+  
+  // Load initial data sharing preference
+  useEffect(() => {
+    const sharingPref = localStorage.getItem('ecosmart_data_sharing') === 'true';
+    setDataSharing(sharingPref);
+    
+    // Listen for global consent updates
+    const handleConsentUpdate = () => {
+      const updatedPref = localStorage.getItem('ecosmart_data_sharing') === 'true';
+      setDataSharing(updatedPref);
+    };
+    
+    window.addEventListener('consent_updated', handleConsentUpdate);
+    return () => window.removeEventListener('consent_updated', handleConsentUpdate);
+  }, []);
   
   // Load notification preferences on component mount and monitor permission status
   useEffect(() => {
@@ -309,6 +325,17 @@ const Settings: React.FC = () => {
     toast({
       title: "Disaster Alert Test Sent",
       description: "Check if you received the disaster alert"
+    });
+  };
+
+  const handleDataSharingToggle = (checked: boolean) => {
+    setDataSharing(checked);
+    localStorage.setItem('ecosmart_data_sharing', String(checked));
+    toast({
+      title: checked ? "Data Sharing Enabled" : "Data Sharing Disabled",
+      description: checked 
+        ? "We will process your data for improved climate insights." 
+        : "Your data will no longer be shared for analytical purposes."
     });
   };
 
@@ -583,7 +610,11 @@ const Settings: React.FC = () => {
                     <Shield className="h-4 w-4" />
                     <Label htmlFor="data-sharing">Data Sharing</Label>
                   </div>
-                  <Switch id="data-sharing" />
+                  <Switch 
+                    id="data-sharing" 
+                    checked={dataSharing}
+                    onCheckedChange={handleDataSharingToggle}
+                  />
                 </div>
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-2">
