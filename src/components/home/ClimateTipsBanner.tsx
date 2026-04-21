@@ -30,7 +30,7 @@ const ClimateTipsBanner: React.FC = () => {
     <section aria-label="Daily climate tips banner" className="mb-6">
       <div className="relative overflow-hidden rounded-2xl shadow-md text-primary-foreground min-h-[320px] sm:min-h-[360px]">
         <img
-          src="/lovable-uploads/982c52ed-835a-4899-9515-b51a4c90cca1.png"
+          src="/uploads/982c52ed-835a-4899-9515-b51a4c90cca1.png"
           alt="Nature background for daily climate tips"
           className="absolute inset-0 h-full w-full object-cover"
           loading="eager"

@@ -19,7 +19,7 @@ export const basicDisasterProneAreas: DisasterProneArea[] = [
       "Store drinking water safely to prevent contamination",
       "Report waste management and drainage issues to local authorities"
     ],
-    image: "/lovable-uploads/f83ed439-b806-4d1b-9500-78460e710a72.png"
+    image: "/uploads/f83ed439-b806-4d1b-9500-78460e710a72.png"
   },
   {
     id: 2,
@@ -56,7 +56,7 @@ export const basicDisasterProneAreas: DisasterProneArea[] = [
       "Participate in beach clean-up initiatives",
       "Maintain safe distance during high tide periods"
     ],
-    image: "/lovable-uploads/14d83fd3-13ec-4247-8a17-517ed651250f.png"
+    image: "/uploads/14d83fd3-13ec-4247-8a17-517ed651250f.png"
   },
   {
     id: 4,
@@ -94,7 +94,7 @@ export const basicDisasterProneAreas: DisasterProneArea[] = [
       "Support community clean-up and drainage improvement initiatives",
       "Report infrastructure and waste management issues to local authorities"
     ],
-    image: "/lovable-uploads/5a679a66-b6fa-4e88-a964-dc682dc58a8d.png"
+    image: "/uploads/5a679a66-b6fa-4e88-a964-dc682dc58a8d.png"
   },
   {
     id: 6,

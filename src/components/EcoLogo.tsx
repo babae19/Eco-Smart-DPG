@@ -21,7 +21,7 @@ const EcoLogo: React.FC<EcoLogoProps> = ({
   return (
     <div className={`flex flex-col items-center ${className}`}>
       <img 
-        src="/lovable-uploads/ac08b10c-f8f5-43a1-b46d-a078121154d0.png" 
+        src="/uploads/ac08b10c-f8f5-43a1-b46d-a078121154d0.png" 
         alt="EcoSmart Logo" 
         className={`${sizeClass[size]}`}
       />
