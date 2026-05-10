@@ -4,6 +4,17 @@ import { isNearFreetown } from './weather/utils';
 
 export type { LocationWeatherAlert } from './weather/types';
 
+/**
+ * Fetches and generates location-based weather alerts and predictions.
+ * Analyzes the user's coordinates to provide either specific data for Freetown
+ * or generic data for other locations, including weather conditions, flood risks,
+ * and safety recommendations.
+ *
+ * @param {number} latitude - The latitude of the location.
+ * @param {number} longitude - The longitude of the location.
+ * @returns {Promise<LocationWeatherAlert>} A promise resolving to detailed weather alert data.
+ * @throws {Error} Throws an error if coordinates are invalid or fetching fails.
+ */
 export const fetchLocationBasedAlerts = async (
   latitude: number, 
   longitude: number

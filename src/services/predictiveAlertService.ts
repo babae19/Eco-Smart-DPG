@@ -1,7 +1,16 @@
 
 import { Alert } from '@/types/AlertTypes';
 
-// Mock predictive alert generation based on location
+/**
+ * Generates personalized disaster alerts based on user coordinates.
+ * Evaluates the geographical location (e.g., Freetown boundaries) and
+ * simulates predictive weather/disaster conditions such as heavy rainfall,
+ * landslides, and coastal flooding.
+ *
+ * @param {number} latitude - The geographical latitude of the user.
+ * @param {number} longitude - The geographical longitude of the user.
+ * @returns {Alert[]} Array of predicted alert objects tailored to the location.
+ */
 export const generatePersonalizedAlerts = (latitude: number, longitude: number): Alert[] => {
   const alerts: Alert[] = [];
   const now = new Date();
